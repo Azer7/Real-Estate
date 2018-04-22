@@ -1,0 +1,94 @@
+﻿<Window x:Class="RSA.Search"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RSA"
+        mc:Ignorable="d"
+        Title="Search" Height="700" Width="1200" MinWidth="1200" MinHeight="700" WindowStartupLocation="CenterScreen">
+    <Grid Background="#004D40">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="2" VerticalAlignment="Stretch">
+            <Button Name="btnToMain" VerticalAlignment="Center" Width="75"  Height="334" Click="btnToMain_Click" Background="#42A5F5" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15" >
+                <StackPanel>
+                    <Label >M</Label>
+                    <Label >A</Label>
+                    <Label Margin="2,0,0,0">I</Label>
+                    <Label>N</Label>
+                </StackPanel>
+            </Button>
+            <Button Name="btnToAdminka" VerticalAlignment="Center"  Width="75"  Height="334" Click="btnToAdminka_Click" Background="#42A5F5" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15">
+                <StackPanel>
+                    <Label >A</Label>
+                    <Label >D</Label>
+                    <Label>M</Label>
+                    <Label Margin="4,0,0,0">I</Label>
+                    <Label>N</Label>
+                    <Label >K</Label>
+                    <Label >A</Label>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <DataGrid SelectedCellsChanged="dgSearch_SelectedCellsChanged" Background="#B2DFDB" Name="dgSearch" Grid.Column="1" ItemsSource="{Binding ViewProp}" AutoGenerateColumns="False" Visibility="Visible" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Id}" Header="Id"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Market}" Header="Market"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Type}" Header="Type"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Area}" Header="Area"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Rooms}" Header="Rooms"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=District}" Header="District"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Settlement}" Header="Settlement"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Adress}" Header="Adress"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Price}" Header="Price"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Owner}" Header="Owner"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Path=Status}" Header="Status"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+       
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel>
+                <Label Foreground="White" HorizontalAlignment="Center" FontSize="50">SEARCH</Label></StackPanel>
+            <StackPanel Margin="25" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label FontSize="18" Foreground="White" Content="I am looking for a" VerticalAlignment="Center" Width="159"/>
+                <ComboBox Name="cbType" VerticalAlignment="Center" Width="100"></ComboBox>
+                <Label FontSize="18" Foreground="White" VerticalAlignment="Center">To</Label>
+                <ComboBox Name="cbMarket" VerticalAlignment="Center" Width="100"></ComboBox>
+            </StackPanel>
+            <StackPanel  Margin="25"  Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label FontSize="18" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center">Price between</Label>
+                <TextBox Name="tbSearchPrice1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="75">400</TextBox>
+                <Label FontSize="18" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center">and</Label>
+                <TextBox Name="tbSearchPrice2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="75">600</TextBox>
+                <Label FontSize="18" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center">AZN</Label>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0,25"  Orientation="Horizontal">
+                <Label FontSize="18" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center">District</Label>
+                <ComboBox x:Name="cbDistrict" Width="190"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0,25"  Orientation="Horizontal">
+                <Label FontSize="18" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center">Settlement</Label>
+                <ComboBox Width="190" Name="cbSettlement"></ComboBox>
+            </StackPanel>
+            <StackPanel>
+                <Button Content="SEARCH" Click="Button_Click" Background="#B2DFDB" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15"> </Button>
+                <Button Content="REFRESH" Margin="0,25" Click="Button_Click_1" Background="#B2DFDB" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15"/>
+            </StackPanel>
+            
+
+        </StackPanel>
+        
+
+
+
+
+
+    </Grid>
+</Window>

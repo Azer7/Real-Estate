@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RealEstateModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Market">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Owners">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Properties">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MarketId" Type="int" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="Area" Type="int" />
+    <Property Name="Rooms" Type="int" />
+    <Property Name="DistrictId" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Settlement" Type="int" />
+    <Property Name="Price" Type="money" />
+    <Property Name="Owner" Type="int" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Settlement">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Types">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Properties_District">
+    <End Role="District" Type="Self.District" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_Market">
+    <End Role="Market" Type="Self.Market" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Market">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="MarketId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_Owners">
+    <End Role="Owners" Type="Self.Owners" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owners">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="Owner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_Settlement">
+    <End Role="Settlement" Type="Self.Settlement" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Settlement">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="Settlement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_Types">
+    <End Role="Types" Type="Self.Types" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Types">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RealEstateModelStoreContainer">
+    <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Market" EntityType="Self.Market" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Owners" EntityType="Self.Owners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Properties" EntityType="Self.Properties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Settlement" EntityType="Self.Settlement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Types" EntityType="Self.Types" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Properties_District" Association="Self.FK_Properties_District">
+      <End Role="District" EntitySet="District" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_Market" Association="Self.FK_Properties_Market">
+      <End Role="Market" EntitySet="Market" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_Owners" Association="Self.FK_Properties_Owners">
+      <End Role="Owners" EntitySet="Owners" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_Settlement" Association="Self.FK_Properties_Settlement">
+      <End Role="Settlement" EntitySet="Settlement" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_Types" Association="Self.FK_Properties_Types">
+      <End Role="Types" EntitySet="Types" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

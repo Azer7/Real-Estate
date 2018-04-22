@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="16e91dcf0c0544d887e58099c170f1b5" Name="Diagram1">
+        <EntityTypeShape EntityType="RealEstateModel.District" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.Market" Width="1.5" PointX="5.125" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.Owners" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.Properties" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.Settlement" Width="1.5" PointX="5.125" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealEstateModel.Types" Width="1.5" PointX="5.125" PointY="2.625" IsExpanded="true" />
+        <AssociationConnector Association="RealEstateModel.FK_Properties_District" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK_Properties_Market" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK_Properties_Owners" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK_Properties_Settlement" ManuallyRouted="false" />
+        <AssociationConnector Association="RealEstateModel.FK_Properties_Types" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

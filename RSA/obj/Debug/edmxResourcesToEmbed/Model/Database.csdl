@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RealEstateModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Properties" Relationship="Self.FK_Properties_District" FromRole="District" ToRole="Properties" />
+  </EntityType>
+  <EntityType Name="Market">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Properties" Relationship="Self.FK_Properties_Market" FromRole="Market" ToRole="Properties" />
+  </EntityType>
+  <EntityType Name="Owners">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Properties" Relationship="Self.FK_Properties_Owners" FromRole="Owners" ToRole="Properties" />
+  </EntityType>
+  <EntityType Name="Properties">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MarketId" Type="Int32" />
+    <Property Name="TypeId" Type="Int32" />
+    <Property Name="Area" Type="Int32" />
+    <Property Name="Rooms" Type="Int32" />
+    <Property Name="DistrictId" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Settlement" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Owner" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="District" Relationship="Self.FK_Properties_District" FromRole="Properties" ToRole="District" />
+    <NavigationProperty Name="Market" Relationship="Self.FK_Properties_Market" FromRole="Properties" ToRole="Market" />
+    <NavigationProperty Name="Owners" Relationship="Self.FK_Properties_Owners" FromRole="Properties" ToRole="Owners" />
+    <NavigationProperty Name="Settlement1" Relationship="Self.FK_Properties_Settlement" FromRole="Properties" ToRole="Settlement" />
+    <NavigationProperty Name="Types" Relationship="Self.FK_Properties_Types" FromRole="Properties" ToRole="Types" />
+  </EntityType>
+  <EntityType Name="Settlement">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Properties" Relationship="Self.FK_Properties_Settlement" FromRole="Settlement" ToRole="Properties" />
+  </EntityType>
+  <EntityType Name="Types">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Properties" Relationship="Self.FK_Properties_Types" FromRole="Types" ToRole="Properties" />
+  </EntityType>
+  <Association Name="FK_Properties_District">
+    <End Role="District" Type="Self.District" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="DistrictId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_Market">
+    <End Role="Market" Type="Self.Market" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Market">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="MarketId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_Owners">
+    <End Role="Owners" Type="Self.Owners" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owners">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="Owner" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_Settlement">
+    <End Role="Settlement" Type="Self.Settlement" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Settlement">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="Settlement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_Types">
+    <End Role="Types" Type="Self.Types" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Types">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RealEstateEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="District" EntityType="Self.District" />
+    <EntitySet Name="Market" EntityType="Self.Market" />
+    <EntitySet Name="Owners" EntityType="Self.Owners" />
+    <EntitySet Name="Properties" EntityType="Self.Properties" />
+    <EntitySet Name="Settlement" EntityType="Self.Settlement" />
+    <EntitySet Name="Types" EntityType="Self.Types" />
+    <AssociationSet Name="FK_Properties_District" Association="Self.FK_Properties_District">
+      <End Role="District" EntitySet="District" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_Market" Association="Self.FK_Properties_Market">
+      <End Role="Market" EntitySet="Market" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_Owners" Association="Self.FK_Properties_Owners">
+      <End Role="Owners" EntitySet="Owners" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_Settlement" Association="Self.FK_Properties_Settlement">
+      <End Role="Settlement" EntitySet="Settlement" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_Types" Association="Self.FK_Properties_Types">
+      <End Role="Types" EntitySet="Types" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
