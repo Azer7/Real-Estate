@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RSA"
         mc:Ignorable="d"
         Title="Search" Height="700" Width="1200" MinWidth="1200" MinHeight="700" WindowStartupLocation="CenterScreen">
-    <Grid Background="#004D40">
+    <Grid Background="#41263A">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -15,7 +15,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="2" VerticalAlignment="Stretch">
-            <Button Name="btnToMain" VerticalAlignment="Center" Width="75"  Height="334" Click="btnToMain_Click" Background="#42A5F5" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15" >
+            <Button Name="btnToMain" VerticalAlignment="Center" Width="75"  Height="334" Click="btnToMain_Click" Background="#FE4E62" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15" >
                 <StackPanel>
                     <Label >M</Label>
                     <Label >A</Label>
@@ -23,7 +23,7 @@
                     <Label>N</Label>
                 </StackPanel>
             </Button>
-            <Button Name="btnToAdminka" VerticalAlignment="Center"  Width="75"  Height="334" Click="btnToAdminka_Click" Background="#42A5F5" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15">
+            <Button Name="btnToAdminka" VerticalAlignment="Center"  Width="75"  Height="334" Click="btnToAdminka_Click" Background="#FE4E62" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15">
                 <StackPanel>
                     <Label >A</Label>
                     <Label >D</Label>
@@ -36,7 +36,7 @@
             </Button>
         </StackPanel>
 
-        <DataGrid SelectedCellsChanged="dgSearch_SelectedCellsChanged" Background="#B2DFDB" Name="dgSearch" Grid.Column="1" ItemsSource="{Binding ViewProp}" AutoGenerateColumns="False" Visibility="Visible" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <DataGrid SelectedCellsChanged="dgSearch_SelectedCellsChanged" Background="#64435F" Name="dgSearch" Grid.Column="1" ItemsSource="{Binding ViewProp}" AutoGenerateColumns="False" Visibility="Visible" Margin="10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Id}" Header="Id"></DataGridTextColumn>
@@ -78,8 +78,8 @@
                 <ComboBox Width="190" Name="cbSettlement"></ComboBox>
             </StackPanel>
             <StackPanel>
-                <Button Content="SEARCH" Click="Button_Click" Background="#B2DFDB" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15"> </Button>
-                <Button Content="REFRESH" Margin="0,25" Click="Button_Click_1" Background="#B2DFDB" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15"/>
+                <Button Content="SEARCH" Click="Button_Click" Background="#FE4E62" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15"> </Button>
+                <Button Content="REFRESH" Margin="0,25" Click="Button_Click_1" Background="#FE4E62" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15"/>
             </StackPanel>
             
 

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RSA"
         mc:Ignorable="d"
         Title="Adminka" Height="400" Width="1200" MinWidth="1200" MinHeight="400" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Background="#41263A">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*" ></ColumnDefinition>
@@ -56,7 +56,7 @@
             <Button Name="btnUpdateMarket" IsEnabled="False"  Background="LightCoral" Padding="10" Margin="10" Click="btnUpdateMarket_Click">UPDATE</Button>
         </StackPanel>
 
-        <DataGrid ItemsSource="{Binding Owners}"  x:Name="dgOwners" SelectedCellsChanged="dgOwners_SelectedCellsChanged"  AutoGenerateColumns="False" Grid.Column="2" Visibility="Visible" Height="279" Margin="10,10,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Width="372">
+        <DataGrid Background="#64435F" ItemsSource="{Binding Owners}"  x:Name="dgOwners" SelectedCellsChanged="dgOwners_SelectedCellsChanged"  AutoGenerateColumns="False" Grid.Column="2" Visibility="Visible" Height="279" Margin="10,10,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Width="372">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=id}" Header="Id"></DataGridTextColumn>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name"></DataGridTextColumn>
@@ -65,25 +65,25 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <DataGrid Name="dgSettlements" SelectedCellsChanged="dgSettlements_SelectedCellsChanged" Grid.Column="2" Visibility="Hidden" Height="279" Margin="10,10,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Width="372">
+        <DataGrid Background="#64435F" Name="dgSettlements" SelectedCellsChanged="dgSettlements_SelectedCellsChanged" Grid.Column="2" Visibility="Hidden" Height="279" Margin="10,10,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Width="372">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=id}" Header="Id"></DataGridTextColumn>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid Name="dgDistricts" SelectedCellsChanged="dgDistricts_SelectedCellsChanged" Grid.Column="2" Visibility="Hidden" Height="279" Margin="10,10,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Width="372">
+        <DataGrid Background="#64435F" Name="dgDistricts" SelectedCellsChanged="dgDistricts_SelectedCellsChanged" Grid.Column="2" Visibility="Hidden" Height="279" Margin="10,10,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Width="372">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=id}" Header="Id"></DataGridTextColumn>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid Name="dgRETypes" SelectedCellsChanged="dgRETypes_SelectedCellsChanged" Grid.Column="2" Visibility="Hidden" Height="279" Margin="10,10,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Width="372">
+        <DataGrid Background="#64435F" Name="dgRETypes" SelectedCellsChanged="dgRETypes_SelectedCellsChanged" Grid.Column="2" Visibility="Hidden" Height="279" Margin="10,10,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Width="372">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=id}" Header="Id"></DataGridTextColumn>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid Name="dgMarket" SelectedCellsChanged="dgMarket_SelectedCellsChanged" Grid.Column="2" Visibility="Hidden" Height="279" Margin="10,10,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Width="372">
+        <DataGrid Background="#64435F"  Name="dgMarket" SelectedCellsChanged="dgMarket_SelectedCellsChanged" Grid.Column="2" Visibility="Hidden" Height="279" Margin="10,10,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Width="372">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=id}" Header="Id"></DataGridTextColumn>
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name"></DataGridTextColumn>
@@ -91,8 +91,8 @@
         </DataGrid>
 
         <StackPanel Grid.Column="3" VerticalAlignment="Center">
-            <Button Name="btnToMain"  Width="80" Content="MAIN" Click="btnToMain_Click" Height="150" Background="#42A5F5" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15" ></Button>
-            <Button Name="btnToSearch" Width="80" Content="SEARCH" Click="btnToSearch_Click"  Height="150" Background="#42A5F5" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15"></Button>
+            <Button Name="btnToMain"  Width="80" Content="MAIN" Click="btnToMain_Click" Height="150" Background="#FE4E62" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15" ></Button>
+            <Button Name="btnToSearch" Width="80" Content="SEARCH" Click="btnToSearch_Click"  Height="150" Background="#FE4E62" BorderThickness="1" BorderBrush="#1E88E5" FontSize="15"></Button>
         </StackPanel>
 
     </Grid>
