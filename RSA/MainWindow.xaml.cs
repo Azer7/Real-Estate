@@ -32,7 +32,6 @@ namespace RSA
             FillProperties();
         }
 
-
         private int _numValue = 0;
         public int NumValue
         {
@@ -146,7 +145,6 @@ namespace RSA
             {
                 cbOwners.Items.Add(item.Name);
             }
-
         }
 
         private void FillProperties()
@@ -168,7 +166,6 @@ namespace RSA
                     Owner = item.Owners.Name,
                     Status = item.Status
                 };
-
                 dgProp.Items.Add(viewProp);
             }
         }
@@ -209,7 +206,6 @@ namespace RSA
                 Price = price,
                 Owner = db.Owners.FirstOrDefault(o => o.Name == owner).id,
                 Status = status
-
             };
 
             db.Properties.Add(add);
@@ -226,7 +222,7 @@ namespace RSA
             tbPrice.Text = "";
             cbOwners.Text = "";
             statusbox.IsChecked = false;
-
+            lblPhoneNumber.Visibility = Visibility.Hidden;
         }
 
         private void btnOwnerCheck_Click(object sender, RoutedEventArgs e)
@@ -278,7 +274,6 @@ namespace RSA
 
         private void btnUpdateProp_Click(object sender, RoutedEventArgs e)
         {
-
             string make = cbMarket.Text;
             string type = cbTypes.Text;
             int area = Convert.ToInt32(tbarea.Text);
@@ -317,8 +312,7 @@ namespace RSA
 
             btnUpdateProp.Visibility = Visibility.Hidden;
             btnAddProp.Visibility = Visibility.Visible;
-            
-
+            lblPhoneNumber.Visibility = Visibility.Hidden;
         }
 
         private void btnToAdminka_Click(object sender, RoutedEventArgs e)
@@ -326,7 +320,6 @@ namespace RSA
             Adminka adminka = new Adminka();
             adminka.Show();
             this.Hide();
-
         }
 
         private void btnToSearch_Click(object sender, RoutedEventArgs e)
@@ -334,7 +327,6 @@ namespace RSA
             Search srch = new Search();
             srch.Show();
             this.Hide();
-            
         }
 
         private void cbTypes_GotFocus(object sender, RoutedEventArgs e)
@@ -347,10 +339,27 @@ namespace RSA
             else
             {
                 lblStyleUnit.Content = "м²";
-            }
+            }      
+        }
 
+        private void btnOwnerCheck_MouseEnter(object sender, MouseEventArgs e)
+        {
+                btnOwnerCheck.Foreground = Brushes.Black;
+        }
 
-                
+        private void btnOwnerCheck_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnOwnerCheck.Foreground = Brushes.White;
+        }
+
+        private void btnAddProp_MouseEnter(object sender, MouseEventArgs e)
+        {
+            btnAddProp.Foreground = Brushes.Black;
+        }
+
+        private void btnAddProp_MouseLeave(object sender, MouseEventArgs e)
+        {
+            btnAddProp.Foreground = Brushes.White;
         }
     }
 }

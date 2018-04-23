@@ -24,33 +24,33 @@
         </StackPanel>
 
         <StackPanel Name="stackBtnOwner" Visibility="Hidden" Grid.Column="1" Margin="0,12,0,0" VerticalAlignment="Center">
-            <Label Name="lblOwner" Margin="10" Background="White">Click on one item from the right list to update</Label>
+            <Label Background="Transparent" Foreground="White" Name="lblOwner" Margin="5">Add New Owner or Click on one item from the right list to update</Label>
             <TextBox Text="Name" Name="tbOwnersNameAddUpdate" Margin="10" GotFocus="tbOwnersNameAddUpdate_GotFocus" LostFocus="tbOwnersNameAddUpdate_LostFocus"></TextBox>
             <TextBox Text="Phone" Name="tbOwnersPhoneAddUpdate" Margin="10" GotFocus="tbOwnersPhoneAddUpdate_GotFocus" LostFocus="tbOwnersPhoneAddUpdate_LostFocus"></TextBox>
             <TextBox Text="E-mail" Name="tbOwnersEmailAddUpdate" Margin="10" GotFocus="tbOwnersEmailAddUpdate_GotFocus" LostFocus="tbOwnersEmailAddUpdate_LostFocus"></TextBox>
             <Button Name="btnAddOwner" Background="LightGoldenrodYellow" Padding="10" Margin="10" Click="btnAddOwner_Click">ADD</Button>
             <Button Name="btnUpdateOwner" IsEnabled="False" Background="LightGoldenrodYellow" Padding="10" Margin="10" Click="btnUpdateOwner_Click">UPDATE</Button>
         </StackPanel>
-        <StackPanel Name="stackBtnSettlements" Visibility="Hidden" Grid.Column="1" Margin="0,78,0,0" VerticalAlignment="Center">
-            <Label Name="lblSettlemets" Margin="10" Background="White">Click on one item from the right list to update</Label>
+        <StackPanel Name="stackBtnSettlements" Visibility="Visible" Grid.Column="1" Margin="0,78,0,0" VerticalAlignment="Center">
+            <Label FontSize="11.5" Name="lblSettlemets" Margin="0" Background="Transparent" Foreground="White">Add New Settlement or Click on one item from the right list to update</Label>
             <TextBox Text="Name" Name="tbSettlementsNameAddUpdate" Margin="10" GotFocus="tbSettlementsNameAddUpdate_GotFocus" LostFocus="tbSettlementsNameAddUpdate_LostFocus"></TextBox>
             <Button Name="btnAddSettlement" Background="LightBlue" Padding="10" Margin="10" Click="btnAddSettlement_Click">ADD</Button>
             <Button Name="btnUpdateSettlements" IsEnabled="False"  Background="LightBlue" Padding="10" Margin="10" Click="btnUpdateSettlements_Click">UPDATE</Button>
         </StackPanel>
         <StackPanel Name="stackBtnDistrict" Visibility="Hidden" Grid.Column="1" Margin="0,78,0,0" VerticalAlignment="Center">
-            <Label Name="lblDistricts" Margin="10" Background="White">Click on one item from the right list to update</Label>
+            <Label Name="lblDistricts" Margin="5" Background="Transparent" Foreground="White">Add New District or Click on one item from the right list to update</Label>
             <TextBox Text="Name" Name="tbDistrictsNameAddUpdate" Margin="10" GotFocus="tbDistrictsNameAddUpdate_GotFocus" LostFocus="tbDistrictsNameAddUpdate_LostFocus"></TextBox>
             <Button Name="btnAddDistricts" Background="LightGray" Padding="10" Margin="10" Click="btnAddDistricts_Click">ADD</Button>
             <Button Name="btnUpdateDistricts" IsEnabled="False"  Background="LightGray" Padding="10" Margin="10" Click="btnUpdateDistricts_Click">UPDATE</Button>
         </StackPanel>
         <StackPanel Name="stackBtnRETypes" Visibility="Hidden" Grid.Column="1" Margin="0,78,0,0" VerticalAlignment="Center">
-            <Label Name="lblRETypes" Margin="10" Background="White">Click on one item from the right list to update</Label>
+            <Label Name="lblRETypes" Margin="5" Background="Transparent" Foreground="White">Add New Type or Click on one item from the right list to update</Label>
             <TextBox Text="Name" Name="tbRetypeNameAddUpdate" Margin="10" GotFocus="tbRetypeNameAddUpdate_GotFocus" LostFocus="tbRetypeNameAddUpdate_LostFocus" ></TextBox>
             <Button Name="btnAddReType" Background="LightSteelBlue" Padding="10" Margin="10" Click="btnAddReType_Click">ADD</Button>
             <Button Name="btnUpdateTypes" IsEnabled="False" Background="LightSteelBlue" Padding="10" Margin="10" Click="btnUpdateTypes_Click">UPDATE</Button>
         </StackPanel>
         <StackPanel Name="stackBtnMarket" Visibility="Hidden" Grid.Column="1" Margin="0,78,0,0" VerticalAlignment="Center">
-            <Label Name="lblMarket" Margin="10" Background="White">Click on one item from the right list to update</Label>
+            <Label Name="lblMarket" Margin="2" Background="Transparent" Foreground="White">Add New Market or Click on one item from the right list to update</Label>
             <TextBox Text="Name" Name="tbMarketNameAddUpdate" Margin="10" GotFocus="tbMarketNameAddUpdate_GotFocus" LostFocus="tbMarketNameAddUpdate_LostFocus"></TextBox>
             <Button Name="btnAddMarket" Background="LightCoral" Padding="10" Margin="10" Click="btnAddMarket_Click">ADD</Button>
             <Button Name="btnUpdateMarket" IsEnabled="False"  Background="LightCoral" Padding="10" Margin="10" Click="btnUpdateMarket_Click">UPDATE</Button>

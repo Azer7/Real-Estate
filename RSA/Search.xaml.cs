@@ -34,7 +34,6 @@ namespace RSA
             main.Show();
             this.Hide();
         }
-
         private void btnToAdminka_Click(object sender, RoutedEventArgs e)
         {
             Adminka admin = new Adminka();
@@ -64,14 +63,11 @@ namespace RSA
             {
                 cbSettlement.Items.Add(item.Name);
             }
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             FillProperties();
-
         }
 
         private void FillProperties()
@@ -91,7 +87,6 @@ namespace RSA
             {
                 endprice = Int32.MaxValue.ToString();
             }
-
 
             decimal price1dec = Convert.ToDecimal(startprice);
             decimal price2dec = Convert.ToDecimal(endprice);
@@ -113,7 +108,6 @@ namespace RSA
                     Owner = item.Owners.Name,
                     Status = item.Status
                 };
-
                 dgSearch.Items.Add(viewProp);
             }
         }
@@ -129,7 +123,6 @@ namespace RSA
             tbSearchPrice2.Text = string.Empty;
         }
 
-
         private void dgSearch_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             ViewProp prop = dgSearch.CurrentItem as ViewProp;
@@ -138,7 +131,6 @@ namespace RSA
                 selected = db.Properties.Find(prop.Id);
                 MessageBox.Show(selected.Owners.Phone);
             }
-
         }
     }
 }

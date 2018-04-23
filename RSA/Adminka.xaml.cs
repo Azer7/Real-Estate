@@ -448,6 +448,8 @@ namespace RSA
 
                 btnUpdateOwner.IsEnabled = true;
                 btnAddOwner.IsEnabled = false;
+
+                lblOwner.Content = "Make changes and press UPDATE to save chages";
             }
         }
         private void dgSettlements_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
@@ -461,6 +463,7 @@ namespace RSA
 
                 btnUpdateSettlements.IsEnabled = true;
                 btnAddSettlement.IsEnabled = false;
+                lblSettlemets.Content = "Make changes and press UPDATE to save chages";
             }
         }
         private void dgDistricts_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
@@ -473,6 +476,7 @@ namespace RSA
 
                 btnUpdateDistricts.IsEnabled = true;
                 btnAddDistricts.IsEnabled = false;
+                lblDistricts.Content = "Make changes and press UPDATE to save chages";
             }
 
         }
@@ -486,6 +490,7 @@ namespace RSA
 
                 btnUpdateTypes.IsEnabled = true;
                 btnAddReType.IsEnabled = false;
+                lblRETypes.Content = "Make changes and press UPDATE to save chages";
             }
         }
         private void dgMarket_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
@@ -499,6 +504,7 @@ namespace RSA
 
                 btnUpdateMarket.IsEnabled = true;
                 btnAddMarket.IsEnabled = false;
+                lblMarket.Content = "Make changes and press UPDATE to save chages";
             }
         }
 
@@ -520,6 +526,13 @@ namespace RSA
 
             FillOwners();
 
+            tbOwnersNameAddUpdate.Text=string.Empty;
+            tbOwnersPhoneAddUpdate.Text=string.Empty;
+            tbOwnersEmailAddUpdate.Text=string.Empty;
+
+            lblOwner.Content = "Add New Owner or Click on one item from the right list to update";
+
+
         }
         private void btnUpdateSettlements_Click(object sender, RoutedEventArgs e)
         {
@@ -533,6 +546,8 @@ namespace RSA
             this.selected1 = null;
 
             FillSettlements();
+            tbSettlementsNameAddUpdate.Text=string.Empty;
+            lblSettlemets.Content = "Add New Settlement or Click on one item from the right list to update";
         }
         private void btnUpdateDistricts_Click(object sender, RoutedEventArgs e)
         {
@@ -546,6 +561,8 @@ namespace RSA
             this.selected2 = null;
 
             FillDistricts();
+            tbDistrictsNameAddUpdate.Text = string.Empty;
+            lblDistricts.Content = "Add New District or Click on one item from the right list to update";
         }
         private void btnUpdateTypes_Click(object sender, RoutedEventArgs e)
         {
@@ -559,6 +576,8 @@ namespace RSA
             this.selected3 = null;
 
             FillRETypes();
+            tbRetypeNameAddUpdate.Text = string.Empty;
+            lblRETypes.Content = "Add New Type or Click on one item from the right list to update";
         }
         private void btnUpdateMarket_Click(object sender, RoutedEventArgs e)
         {
@@ -572,6 +591,8 @@ namespace RSA
             this.selected4 = null;
 
             FillMarket();
+            tbMarketNameAddUpdate.Text = string.Empty;
+            lblMarket.Content = "Add New Market or Click on one item from the right list to update";
         }
     }
 }
